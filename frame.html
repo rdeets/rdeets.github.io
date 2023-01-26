@@ -1,0 +1,18 @@
+<html>
+<body>
+<script>
+           
+            const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3')
+            .then(FingerprintJS => FingerprintJS.load())
+            fpPromise
+            .then(fp => fp.get())
+            .then(result => {
+                let pre = document.createElement('pre')
+                pre.textContent = JSON.stringify(result['components']['osCpu']['value'], undefined, 2)
+                document.body.append(pre)
+            })
+        </script>
+            
+            <iframe src="https://fingerprintjs.github.io/fingerprintjs/"></iframe>
+</body>
+</html>
